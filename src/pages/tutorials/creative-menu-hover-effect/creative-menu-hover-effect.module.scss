@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;500;700;900&family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;500;700;900&family=Sacramento&family=Space+Grotesk&display=swap');
+
+.creative_menu_hover_effect {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #fff;
+
+  ul {
+    position: relative;
+    // これを設定しないと a::before の z-index: -1 が効かない。
+    z-index: 0;
+
+    &:hover > li:not(:hover) {
+      opacity: 0;
+    }
+
+    li {
+      list-style: none;
+      text-align: center;
+
+      &:hover a {
+        background: #333;
+        color: var(--clr);
+        font-weight: 500;
+      }
+
+      a {
+        color: #333;
+        text-decoration: none;
+        font-size: 2em;
+        padding: 5px 20px;
+        display: inline-flex;
+        font-weight: 300;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-family: 'Space Grotesk', sans-serif;
+
+        &::before {
+          content: ' ';
+          position: absolute;
+          top: 50%;
+          left: 40%;
+          transform: translate(-50%, -50%);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 5em;
+          opacity: 0;
+          color: #222;
+          z-index: -1;
+          font-weight: 400;
+          text-transform: initial;
+          letter-spacing: 500px;
+          font-family: 'Sacramento', cursive;
+        }
+
+        &:hover::before {
+          content: attr(data-text);
+          opacity: 1;
+          left: 50;
+          background: var(--clr);
+          width: 250vh;
+          height: 250vh;
+          letter-spacing: 0;
+          transition: letter-spacing 0.5s;
+        }
+      }
+    }
+  }
+}
