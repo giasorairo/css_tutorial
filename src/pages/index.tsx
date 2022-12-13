@@ -4,6 +4,7 @@ import Link from 'next/link';
 const LINKS: {path: string, label: string, references: string[] }[] = [
   { path: '/tutorials/infinite-ticker', label: 'infinite-ticker', references: ['https://www.youtube.com/watch?v=AYf3nhDmgzA&t=320s'] },
   { path: '/tutorials/emoji-cursor', label: 'emoji-cursor', references: ['https://www.youtube.com/watch?v=RTp8jquvh-c&t=128s'] },
+  { path: '/tutorials/creative-menu-hover-effect', label: 'creative-menu-hover-effect', references: ['https://www.youtube.com/watch?v=vCvbC0PPbLo'] },
 ];
 
 export default function Home() {
